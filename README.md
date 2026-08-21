@@ -1,12 +1,13 @@
-# Network Incident Investigations
+# Network Incident Investigations & Threat Analysis Portfolio
 
-## Overview
-This repository contains documentation, logs, and technical write-ups for network security incident analysis and forensic investigations. 
+Welcome to my network security analysis portfolio. This repository contains hands-on incident response investigations, packet captures (`.pcap`), and log analysis performed using **Wireshark**, **TShark**, and **Linux CLI tools**.  
 
-## Tools Used
-* Wireshark
-* NetworkMiner
-* Linux Terminal / Bash
+## Investigation Case Studies
+ 
+* **[Case Study 01: FormBook Malware C2 Investigation](./incident-01-formbook-malware/)**
+  * **Threat Focus:** Emerging Threat alerts, FormBook InfoStealer HTTP C2 check-in traffic.
+  * **Artifacts Identified:** Compromised internal host IP/MAC, active C2 destinations, and extracted IoCs.
+  * **Tools Used:** Wireshark, TShark, Linux CLI.
 
-## Incident Log
-* *[Pending}
+---
+*More case studies will be added as new PCAPs are analyzed.*
