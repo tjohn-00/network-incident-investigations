@@ -1,13 +1,11 @@
-# Network Incident Investigations & Threat Analysis Portfolio
+# Security Incident Investigations & Threat Portfolio
 
-Welcome to my network security analysis portfolio. This repository contains hands-on incident response investigations, packet captures (`.pcap`), and log analysis performed using **Wireshark**, **TShark**, and **Linux CLI tools**.  
+Welcome to my security analysis portfolio. This repository contains hands-on incident response investigations, endpoint log analysis, and threating hunting case studies using Wireshark, Wazuh SIEM, ANY.RUN, and Linux CLI tools.   
 
-## Investigation Case Studies
- 
-* **[Case Study 01: FormBook Malware C2 Investigation](./incident-01-formbook-malware/)**
-  * **Threat Focus:** Emerging Threat alerts, FormBook InfoStealer HTTP C2 check-in traffic.
-  * **Artifacts Identified:** Compromised internal host IP/MAC, active C2 destinations, and extracted IoCs.
-  * **Tools Used:** Wireshark, TShark, Linux CLI.
+## Incident Case Studies
 
----
-*More case studies will be added as new PCAPs are analyzed.*
+| Case Study / Project | Core Triage Vector | Key Tools & Artifacts | Status | 
+| :--- | :--- | :--- | :--- |
+| **[Incident 01: FormBook Malware C2](./incident-01-formbook-malware)** | Network Forensics | Wireshark, DHCP/Kerberos Attribution, VirusTotal, Defanged IOCs | **Completed** |
+| **[Incdient 02: Phishing & Sandbox Triage](./incident-02-phishing-triage)** | Email & Malware | ANY.RUN, Header Analysis, CyberChef, Defanged IOCs | **In Progress** |
+| **[Incident 03: Wazuh SIEM Log Hunting](./incident-03-wazuh-siem)** | Host Telemetry | Wazuh Dashboard, Sysmon, Auditd, XML Detection Rules | **Planned** | 
