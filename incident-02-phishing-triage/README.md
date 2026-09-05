@@ -1,6 +1,6 @@
 # Incident Report 02: Phishing Email & Dynamic Sandbox Triage
 
-## Executive Summary
+## 1. Executive Summary
 
 During routine security monitoring, a suspicious email (`sample-7307.eml`) originally from `phishing_pot` was flagged for initial SOC triage. Header parsing revealed an encoded display name to evade text-based security filters.
 
@@ -8,7 +8,7 @@ Although initial email authentication checks (SPF, DKIM, and DMARC) passed due t
 
 ---
 
-## Environment & Tools 
+## 2. Environment & Tools 
 
 * **Environment:** Insolated Linux Security VM
 * **Raw Sample:** `phishing_pot/email/sample-7307.eml`
@@ -25,7 +25,7 @@ Although initial email authentication checks (SPF, DKIM, and DMARC) passed due t
 
 ---
 
-## Header & Authentication Analysis
+## 3. Header & Authentication Analysis
 
 Initial analysis evaluated routing headers, MIME encoding, and authentication records to assess sender legitimacy and platform authorization. 
 
@@ -55,7 +55,7 @@ All email authentication checks (SPF, DKIM, DMARC) passed because the attacker c
 
 ---
 
-## Extracted URL Assessment & Reputation Lookup
+## 4. Extracted URL Assessment & Reputation Lookup
 
 To extract all embedded URLs cleanly from the raw email sample using the Linux terminal:
 
@@ -78,7 +78,7 @@ Dynamic sandbox execution of `hxxps://is[.]gd/hidateh` yielded an intial low sta
 
 ---
 
-## Dynamic Behavioral Analysis (Hybrid Analysis) 
+## 5. Dynamic Behavioral Analysis (Hybrid Analysis) 
 
 The primary URL (`hxxps://is[.]gd/hidateh`) was denotated in Hybrid Analysis (CrowdStrike Falcon Sandbox) under a controlled Windows 10 64-bit environment.
 
@@ -96,7 +96,7 @@ The primary URL (`hxxps://is[.]gd/hidateh`) was denotated in Hybrid Analysis (Cr
 *Figure 2: Execution graph showing initial process execution.*
 
 **Annotation Legend:**
-* :orange_circle: **Orange Callout Box:** Highlights the parent browser process (`msedge.exe`) and initial execution chain during URL navigation. 
+* :orange_circle: **Orange Callout Box:** Highlights the parent browser process (`chrome.exe`) and initial execution chain during URL navigation. 
 
 ---
 
@@ -113,7 +113,7 @@ While the target IP (`104[.]25[.]233[.]53`) belongs to legitimate Cloudflare CDN
 
 ---
 
-## MITRE ATT&CK Enterprise Mapping 
+## 6. MITRE ATT&CK Enterprise Mapping 
 
 | Tactic | Technique ID | Technique Name | Lab Evidence / Observation |
 | :--- | :--- | :--- | :--- | 
@@ -125,7 +125,7 @@ While the target IP (`104[.]25[.]233[.]53`) belongs to legitimate Cloudflare CDN
 
 ---
 
-## Remediation & SOC Recommendations 
+## 7. Remediation & SOC Recommendations 
 
 1. **Secure Email Gateway (SEG) Policy:** Implement mail gateway rules to automatically inspect or block inbound emails containing high-risk public link shorteners (`is[.]gd`, `bit[.]ly`, `tinyurl[.]com`). 
 2. **Cloud Tenant Inspection:** Implement tenant-level filtering for public cloud app hosts (`firebaseapp[.]com`, `herokuapp[.]com`) to flag inbound traffic originating from unverified app subdomains.
