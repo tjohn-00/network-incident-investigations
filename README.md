@@ -1,6 +1,6 @@
-# Security Incident Investigations & Threat Portfolio
+# Incident Response & Threat Hunting Portfolio
 
-Welcome to my security analysis portfolio. This repository contains hands-on incident response investigations, endpoint log analysis, and threat hunting case studies using Wireshark, Wazuh SIEM, ANY.RUN, and Linux CLI tools.   
+Incident response case studies, endpoint log analysis, and threat hunting using Wireshark, Wazuh SIEM, ANY.RUN, and Linux.   
 
 ## Incident Case Studies
 
